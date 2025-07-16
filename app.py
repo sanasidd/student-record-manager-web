@@ -5,9 +5,11 @@ app = Flask(__name__)
 app.secret_key = 'any-secret-key'
 
 # MongoDB setup
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb+srv://studentadmin:student123@@cluster0.2t1m6sj.mongodb.net/?retryWrites=true&w=majority")
+
 db = client["school"]
 students = db["students"]
+
 
 @app.route('/')
 def index():
