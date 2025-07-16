@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, redirect, flash
 from pymongo import MongoClient
+from urllib.parse import quote_plus
+
 
 app = Flask(__name__)
 app.secret_key = 'any-secret-key'
 
 # MongoDB setup
-client = MongoClient("mongodb+srv://studentadmin:student123@@cluster0.2t1m6sj.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://studentadmin:student123@cluster0.2t1m6sj.mongodb.net/?retryWrites=true&w=majority")
 
 db = client["school"]
 students = db["students"]
